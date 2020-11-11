@@ -92,7 +92,7 @@ return [
         ],
 
         'heroku' => [
-            'driver' => 'DB_CONNECTION_HEROKU',
+            'driver' => env('DB_CONNECTION_HEROKU'),
             'url' => env('DB_URL_HEROKU'),
             'host' => env('DB_HOST_HEROKU', '127.0.0.1'),
             'port' => env('DB_PORT_HEROKU', '5432'),

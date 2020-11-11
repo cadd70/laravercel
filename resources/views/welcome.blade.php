@@ -1,3 +1,5 @@
+{{dd(env('DB_CONNECTION_HEROKU'));}}
+
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
