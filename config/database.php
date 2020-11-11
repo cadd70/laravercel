@@ -15,7 +15,7 @@ return [
     |
     */
 
-    'default' => env('DB_CONNECTION', 'mysql'),
+    'default' => env('DB_CONNECTION', 'sqlite'),
 
     /*
     |--------------------------------------------------------------------------
@@ -89,6 +89,21 @@ return [
             'charset' => 'utf8',
             'prefix' => '',
             'prefix_indexes' => true,
+        ],
+
+        'heroku' => [
+            'driver' => 'DB_CONNECTION_HEROKU',
+            'url' => env('DB_URL_HEROKU'),
+            'host' => env('DB_HOST_HEROKU', '127.0.0.1'),
+            'port' => env('DB_PORT_HEROKU', '5432'),
+            'database' => env('DB_DATABASE_HEROKU', 'forge'),
+            'username' => env('DB_USERNAME_HEROKU', 'forge'),
+            'password' => env('DB_PASSWORD_HEROKU', ''),
+            'charset' => 'utf8',
+            'prefix' => '',
+            'prefix_indexes' => true,
+            'schema' => 'public',
+            'sslmode' => 'prefer',
         ],
 
     ],
