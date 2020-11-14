@@ -81,7 +81,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    A Prisci Ama Shortbread
                 </div>
 
                 <div class="links">
