@@ -8,6 +8,7 @@
         "dest": "/api/index.php"
     }],
     "env": {
+        "APP_NAME": "laravercel",
         "APP_ENV": "producao",
         "APP_DEBUG": "true",
         "APP_KEY":"base64:/jdHfUtsgEmiBERICViw4PzZ0TG6PNlrsErG2dnDgN8=",
