@@ -10,6 +10,8 @@
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
 
         <!-- Styles -->
+
+        <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
         <style>
             html, body {
                 background-color: #fff;
@@ -99,4 +101,6 @@
             </div>
         </div>
     </body>
+
+    <script src="{{ asset('js/bootstrap.min.js') }}"></script>
 </html>
