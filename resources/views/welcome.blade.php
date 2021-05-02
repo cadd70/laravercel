@@ -11,7 +11,7 @@
 
         <!-- Styles -->
 
-        <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('../css/bootstrap.min.css') }}">
         <style>
             html, body {
                 background-color: #fff;
@@ -102,5 +102,5 @@
         </div>
     </body>
 
-    <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('../js/bootstrap.min.js') }}"></script>
 </html>
