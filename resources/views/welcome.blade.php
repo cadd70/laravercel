@@ -10,7 +10,7 @@
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
 
         <!-- Styles -->
-        <link rel="stylesheet" href="{{ asset('css/bootstrap.min.js') }}">
+        <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
         
         <style>
             html, body {
@@ -86,7 +86,7 @@
                     Test
                 </div>
 
-                <img src="{{ asset('imagespersona5-hat.jpg') }}" alt="Persona 5">
+                <img src="{{ asset('images/persona5-hat.jpg') }}" alt="Persona 5">
 
                 <button type="button" class="btn btn-primary float-right">OK</button>
 
