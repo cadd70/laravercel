@@ -15,6 +15,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/test', function () {
+    return view('test');
+});
+
 Auth::routes();
 
 Route::get('/home', function() {
@@ -22,10 +26,6 @@ Route::get('/home', function() {
 })->name('home')->middleware('auth');
 
  // index
- Route::get('/index', function () {
-    return view('portal.index');
-});
-
-Auth::routes();
-
-//Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Route::get('/index', function () {
+//     return view('portal.index');
+// });

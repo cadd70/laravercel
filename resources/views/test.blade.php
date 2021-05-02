@@ -83,7 +83,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Test
+                    Meta
                 </div>
 
                 <button type="button" class="btn btn-primary float-right">OK</button>
