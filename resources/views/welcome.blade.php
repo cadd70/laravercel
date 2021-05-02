@@ -84,6 +84,8 @@
                     Meta
                 </div>
 
+                <button type="button" class="btn btn-primary float-right">OK</button>
+
                 <div class="links">
                     <a href="https://laravel.com/docs">Docs</a>
                     <a href="https://laracasts.com">Laracasts</a>
