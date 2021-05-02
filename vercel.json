@@ -23,7 +23,7 @@
     },
     "headers": [
         {
-        "src": "/(.*)",
+        "source": "/(.*)",
         "dest": "/api/index.php",
         "headers": [
             { "key": "Access-Control-Allow-Credentials", "value": "true" },
