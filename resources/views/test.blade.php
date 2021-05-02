@@ -85,9 +85,7 @@
                 <div class="title m-b-md">
                     Meta
                 </div>
-
-                <img src="/../public/images/persona5-hat.jpg" alt="Persona 5">
-
+                
                 <button type="button" class="btn btn-primary float-right">OK</button>
 
                 <div class="links">
