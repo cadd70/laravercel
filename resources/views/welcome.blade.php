@@ -10,7 +10,7 @@
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
 
         <!-- Styles -->
-        <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('plugins/bootstrap/css/bootstrap.min.css') }}">
         
         <style>
             html, body {
@@ -86,7 +86,7 @@
                     Test
                 </div>
 
-                <img src="{{ asset('images/persona5-hat.jpg') }}" alt="Persona 5">
+                <img src="{{ asset('images/persona5-hat.jpg') }}" style="width: 50px; height: auto;" alt="Persona 5">
 
                 <button type="button" class="btn btn-primary float-right">OK</button>
 
@@ -104,6 +104,6 @@
         </div>
     </body>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('plugins/jquery/jquery.min.js') }}"></script>
+    <script src="{{ asset('plugins/bootstrap/js/bootstrap.min.js') }}"></script>
 </html>
