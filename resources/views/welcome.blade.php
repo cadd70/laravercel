@@ -11,7 +11,7 @@
 
         <!-- Styles -->
 
-        <link rel="stylesheet" href="{{ asset(/css/bootstrap.min.css) }}">
+        <link rel="stylesheet" href="../../public/css/bootstrap.min.css">
         
         <style>
             html, body {
