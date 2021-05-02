@@ -15,7 +15,7 @@
     }],
     "env": {
         "APP_NAME": "laravercel",
-        "APP_ENV": "producao",
+        "APP_ENV": "local",
         "APP_DEBUG": "true",
         "APP_KEY":"base64:/jdHfUtsgEmiBERICViw4PzZ0TG6PNlrsErG2dnDgN8=",
         "APP_URL": "https://laravercel.vercel.app",
