@@ -36,6 +36,9 @@
                 <div class="col-md-6 col-sm-12">
                     <select name="" id="" class="form-control">
                         <option value="" selected>Selecione um Parlamentar</option>
+                        @each($listaParlamentares as $parlamentar)
+                            <option value="{{ $parlamentar->iIdFichaCadastralParlamentar }}">{{ $parlamentar->cNomeParlamentar }}</option>
+                        @endforeach
                     </select>    
                 </div>
                 <div class="col-md-3 d-none d-md-block text-right">
