@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 
+
 class DatabaseSeeder extends Seeder
 {
     /**
@@ -13,6 +14,9 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call(UsersTableSeeder::class);
+        $this->call(TablePartidosSedder::class);
+        $this->call(TableFichaCadastroParlamentarSeeder::class);
+        $this->call(TableQuantidadeVotoPorMunicipioSeeder::class);
+        $this->call(TableDoacaoPorParlamentarSeeder::class);
     }
 }

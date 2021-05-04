@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\ConsultoriaController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -11,21 +13,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/{iIdFichaCadastralParlamentar?}', [ConsultoriaController::class, 'index']);
 
-Route::get('/test', function () {
-    return view('test');
-});
 
-Auth::routes();
-
-Route::get('/home', function() {
-    return view('home');
-})->name('home')->middleware('auth');
-
- // index
-// Route::get('/index', function () {
-//     return view('portal.index');
-// });
