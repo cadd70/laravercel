@@ -28,10 +28,10 @@
     <body>
         <header>
             <nav class="navbar navbar-expand-md fixed-top navbar-dark bg-dark">
-                <div class="col-6 col-sm-6 col-md-3">
+                <div class="col-4 col-sm-6 col-md-3">
                     <h1 class="navbar-brand">Consultoria</h1>
                 </div>
-                <div class="col-6 col-sm-6 d-md-none text-right">
+                <div class="col-8 col-sm-6 d-md-none text-right">
                     <a class="btn btn-light" href="#">Conta</a>
                     <a class="btn btn-light" href="#">Logout</a>
                 </div>
