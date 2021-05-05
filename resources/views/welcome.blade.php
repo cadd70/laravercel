@@ -21,9 +21,8 @@
             }
         </style>
 
-
     </head>
-    <body>
+    <body class="d-flex flex-column min-vh-100">
         <header>
             <nav class="navbar navbar-expand-md fixed-top navbar-dark bg-dark">
                 <div class="col-4 col-sm-6 col-md-3">
@@ -34,7 +33,7 @@
                     <a class="btn btn-light" href="#">Logout</a>
                 </div>
                 <div class="col-md-6 col-sm-12">
-                    <select name="" id="" class="form-control">
+                    <select id="iIdFichaCadastralParlamentar" class="form-control">
                         <option value="" selected>Selecione um Parlamentar</option>
                         @foreach($listaParlamentares as $parlamentar)
                             <option value="{{ $parlamentar->iIdFichaCadastralParlamentar }}">{{ $parlamentar->cNomeParlamentar }}</option>
@@ -48,122 +47,115 @@
             </nav>
         </header>
 
-        <div class="container">  
-            <div class="content">
-                <div class="row text-center">
-
-                    <div class="card mb-3 col-12">
-                        <div class="card-header bg-dark text-white">
-                            <h1>Deputado Federal <br class="d-md-none"><b>Carlos Alberto</b> <br class="d-lg-none"><small>Partido: <b>WXZY</b></small></h1>
-                        </div>
-                        <div class="row no-gutters">
-                            <div class="col-md-3">
-                                <img height="250" width="180" src="{{ asset('images/no-user-picture.jpg') }}" alt="no-user-picture">
+        @if(isset($dadosParlamentar))
+            <div class="container">  
+                <div class="content">
+                    <div class="row text-center">
+                        <div class="card mb-3 col-12">
+                            <div class="card-header bg-dark text-white">
+                                <h1>Deputado Federal <br class="d-md-none"><b>Carlos Alberto</b> <br class="d-lg-none"><small>Partido: <b>WXYZ</b></small></h1>
                             </div>
-                            <div class="col-md-9">
-                                <div class="card-body">
-                                    <h3 class="card-title">Card title</h3>
-                                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                            <div class="row no-gutters">
+                                <div class="col-md-3">
+                                    <img height="250" width="180" src="{{ asset('images/no-user-picture.jpg') }}" alt="no-user-picture">
+                                </div>
+                                <div class="col-md-9">
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col">
+                                                <label>E-mail:</label>
+                                                <p class="form-control"></p>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-
-                    <div class="card mb-3 col-12">
-                        <div class="card-header bg-dark text-white">
-                            <h1>Deputado Federal <br class="d-md-none"><b>Carlos Alberto</b> <br class="d-lg-none"><small>Partido: <b>WXZY</b></small></h1>
-                        </div>
-                        <div class="row no-gutters">
-                            <div class="col-md-3">
-                                <img height="250" width="180" src="{{ asset('images/no-user-picture.jpg') }}" alt="no-user-picture">
+                    <div class="row text-center">
+                        <div class="card mb-3 col-12">
+                            <div class="card-header bg-dark text-white">
+                                <h1>Deputado Federal <br class="d-md-none"><b>Carlos Alberto</b> <br class="d-lg-none"><small>Partido: <b>WXYZ</b></small></h1>
                             </div>
-                            <div class="col-md-9">
-                                <div class="card-body">
-                                    <h3 class="card-title">Card title</h3>
-                                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                            <div class="row no-gutters">
+                                <div class="col-md-3">
+                                    <img height="250" width="180" src="{{ asset('images/no-user-picture.jpg') }}" alt="no-user-picture">
+                                </div>
+                                <div class="col-md-9">
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col">
+                                                <label>E-mail:</label>
+                                                <p class="form-control"></p>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="card mb-3 col-12">
-                        <div class="card-header bg-dark text-white">
-                            <h1>Deputado Federal <br class="d-md-none"><b>Carlos Alberto</b> <br class="d-lg-none"><small>Partido: <b>WXZY</b></small></h1>
-                        </div>
-                        <div class="row no-gutters">
-                            <div class="col-md-3">
-                                <img height="250" width="180" src="{{ asset('images/no-user-picture.jpg') }}" alt="no-user-picture">
+                    <div class="row text-center">
+                        <div class="card mb-3 col-12">
+                            <div class="card-header bg-dark text-white">
+                                <h1>Deputado Federal <br class="d-md-none"><b>Carlos Alberto</b> <br class="d-lg-none"><small>Partido: <b>WXYZ</b></small></h1>
                             </div>
-                            <div class="col-md-9">
-                                <div class="card-body">
-                                    <h3 class="card-title">Card title</h3>
-                                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                            <div class="row no-gutters">
+                                <div class="col-md-3">
+                                    <img height="250" width="180" src="{{ asset('images/no-user-picture.jpg') }}" alt="no-user-picture">
+                                </div>
+                                <div class="col-md-9">
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col">
+                                                <label>E-mail:</label>
+                                                <p class="form-control"></p>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="card mb-3 col-12">
-                        <div class="card-header bg-dark text-white">
-                            <h1>Deputado Federal <br class="d-md-none"><b>Carlos Alberto</b> <br class="d-lg-none"><small>Partido: <b>WXZY</b></small></h1>
-                        </div>
-                        <div class="row no-gutters">
-                            <div class="col-md-3">
-                                <img height="250" width="180" src="{{ asset('images/no-user-picture.jpg') }}" alt="no-user-picture">
+                    <div class="row text-center">
+                        <div class="card mb-3 col-12">
+                            <div class="card-header bg-dark text-white">
+                                <h1>Deputado Federal <br class="d-md-none"><b>Carlos Alberto</b> <br class="d-lg-none"><small>Partido: <b>WXYZ</b></small></h1>
                             </div>
-                            <div class="col-md-9">
-                                <div class="card-body">
-                                    <h3 class="card-title">Card title</h3>
-                                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                            <div class="row no-gutters">
+                                <div class="col-md-3">
+                                    <img height="250" width="180" src="{{ asset('images/no-user-picture.jpg') }}" alt="no-user-picture">
+                                </div>
+                                <div class="col-md-9">
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col">
+                                                <label>E-mail:</label>
+                                                <p class="form-control"></p>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="card mb-3 col-12">
-                        <div class="card-header bg-dark text-white">
-                            <h1>Deputado Federal <br class="d-md-none"><b>Carlos Alberto</b> <br class="d-lg-none"><small>Partido: <b>WXZY</b></small></h1>
-                        </div>
-                        <div class="row no-gutters">
-                            <div class="col-md-3">
-                                <img height="250" width="180" src="{{ asset('images/no-user-picture.jpg') }}" alt="no-user-picture">
-                            </div>
-                            <div class="col-md-9">
-                                <div class="card-body">
-                                    <h3 class="card-title">Card title</h3>
-                                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card mb-3 col-12">
-                        <div class="card-header bg-dark text-white">
-                            <h1>Deputado Federal <br class="d-md-none"><b>Carlos Alberto</b> <br class="d-lg-none"><small>Partido: <b>WXZY</b></small></h1>
-                        </div>
-                        <div class="row no-gutters">
-                            <div class="col-md-3">
-                                <img height="250" width="180" src="{{ asset('images/no-user-picture.jpg') }}" alt="no-user-picture">
-                            </div>
-                            <div class="col-md-9">
-                                <div class="card-body">
-                                    <h3 class="card-title">Card title</h3>
-                                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
                 </div>
-                
-                <br>
             </div>
-        </div>
+        @else
+            <div class="container">  
+                <div class="content">
+                    <div class="row text-center">
+                        <div class="card mb-3 col-12">
+                            <div class="card-header bg-dark text-white">
+                                <h1>Selecione um Palamentar</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        @endif
 
         <!-- Footer -->
-        <footer class="bg-light text-center text-lg-start">
+        <footer class="mt-auto bg-light text-center text-lg-start">
             <!-- Grid container -->
             <div class="container mt-2">
             <!--Grid row-->
@@ -182,9 +174,8 @@
                     <!--Grid column-->
                 </div>
                 <!--Grid row-->
-                </div>
+            </div>
             <!-- Grid container -->
-        
         </footer>
         <!-- Footer -->            
     </body>
@@ -192,4 +183,9 @@
     <script src="{{ asset('plugins/jquery/jquery.min.js') }}"></script>
     <script src="{{ asset('plugins/bootstrap/js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('plugins/fontawesome/js/all.min.js') }}"></script>
+    <script>
+        $('#iIdFichaCadastralParlamentar').change(function(){
+            window.location.href = `/${this.value}`;
+        });
+    </script>
 </html>

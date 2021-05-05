@@ -14,5 +14,3 @@ use App\Http\Controllers\ConsultoriaController;
 */
 
 Route::get('/{iIdFichaCadastralParlamentar?}', [ConsultoriaController::class, 'index']);
-
-
