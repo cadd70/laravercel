@@ -61,7 +61,7 @@
                     <div class="row text-center">
                         <div class="card mb-3 p-0 col-12">
                             <div class="card-header bg-dark text-white">
-                                <h2>{{ $dadosParlamentar->cTipoFuncaoParlamento }} <br class="d-md-none"><b>{{ $dadosParlamentar->cNomeParlamentar }}</b> <br class="d-lg-none"><small>Partido: <b>{{ $dadosParlamentar->partidos->cSiglaPartido }}-{{ $dadosParlamentar->partidos->cUfPartido }}</b></small></h2>
+                                <h2>{{ $dadosParlamentar->cTipoFuncaoParlamento }} <br class="d-md-none"><b>{{ $dadosParlamentar->cNomeParlamentar }}</b> <br class="d-lg-none"><small>Partido: <b>{{ $dadosParlamentar->partidos->cSiglaPartido }}/{{ $dadosParlamentar->partidos->cUfPartido }}</b></small></h2>
                             </div>
                             <div class="row no-gutters">
                                 <div class="col-sm-3 col-md-3 col-lg-2">
@@ -88,7 +88,7 @@
                                             </div>
                                         </div>
                                         <br>
-                                        <div class="row d-sm-none d-lg-flex">
+                                        <div class="row d-sm-none d-lg-flex text-center">
                                             <div class="col-12 col-sm">
                                                 <label class="font-weight-bold">Qtd. de Votos:</label>
                                                 <h3>{{ number_format($dadosParlamentar->quantidadeVotos->sum('iQuantidadeVotos'), 0, ',', '.') }}</h3>
@@ -162,7 +162,7 @@
                     <div class="row text-center">
                         <div class="card mb-3 col-12">
                             <div class="card-header bg-dark text-white">
-                                <h1>Selecione um Palamentar</h1>
+                                <h1>Selecione um Parlamentar</h1>
                             </div>
                         </div>
                     </div>
@@ -206,7 +206,7 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js@3.2.1/dist/chart.min.js" integrity="sha256-uVEHWRIr846/vAdLJeybWxjPNStREzOlqLMXjW/Saeo=" crossorigin="anonymous"></script>
     <script>
         $('#iIdFichaCadastralParlamentar').change(function(){
-            window.location.href = `/${this.value}`;
+            window.location.href = `/{{ $cTipoParlamentar }}/${this.value}`;
         });
 
         $(document).ready( function () {
@@ -248,13 +248,5 @@
                 },
             });
         } );
-
-        // Fix positioning with static parents
-        if (this.$dropdownParent[0].style.position !== 'static') {
-            var parentOffset = this.$dropdownParent.offset();
-
-            css.top -= parentOffset.top;
-            css.left -= parentOffset.left;
-        }
     </script>
 </html>
