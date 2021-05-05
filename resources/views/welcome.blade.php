@@ -224,38 +224,6 @@
                 width: '100%'
             });
 
-            let arrayNomes = [];
-            let arrayValores = [];
-            $.each(@json($dadosParlamentar->doacao), function(key, item) {
-                arrayNomes.push(item.cNomeDoador);
-                arrayValores.push(item.nValorDoacao);
-            });
-
-            let canvas = document.getElementById('canvasDoacoes').getContext('2d');
-            let chartDoacoes = new Chart(canvas, {
-                type: 'bar',
-                data: {
-                    labels: arrayNomes,
-                    datasets: [
-                        {
-                            label: ['Valor'],
-                            data: arrayValores,
-                        }
-                    ]
-                },
-                options: {
-                    indexAxis: 'y',
-                    scales: {
-                        x: {
-                            ticks: {
-                                display: false
-                            },
-                        }
-                    },
-                    responsive: true
-                }
-            });
-
             $('table').DataTable({
                 responsive:       true,
                 paging:           false,
@@ -290,4 +258,40 @@
             });
         } );
     </script>
+    @if(isset($dadosParlamentar))
+        <script>
+
+            let arrayNomes = [];
+            let arrayValores = [];
+            $.each(@json($dadosParlamentar->doacao), function(key, item) {
+                arrayNomes.push(item.cNomeDoador);
+                arrayValores.push(item.nValorDoacao);
+            });
+
+            let canvas = document.getElementById('canvasDoacoes').getContext('2d');
+            let chartDoacoes = new Chart(canvas, {
+                type: 'bar',
+                data: {
+                    labels: arrayNomes,
+                    datasets: [
+                        {
+                            label: ['Valor'],
+                            data: arrayValores,
+                        }
+                    ]
+                },
+                options: {
+                    indexAxis: 'y',
+                    scales: {
+                        x: {
+                            ticks: {
+                                display: false
+                            },
+                        }
+                    },
+                    responsive: true
+                }
+            });
+        </script>
+    @endif
 </html>
