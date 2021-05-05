@@ -43,9 +43,9 @@ class ConsultoriaController extends Controller
         
         if ($iIdFichaCadastralParlamentar) {
             $dadosParlamentar = FichaCadastro::with('quantidadeVotos', 'doacao', 'partidos')->find($iIdFichaCadastralParlamentar);
-            return view('welcome')->with(compact('cTipoParlamentar'), compact('dadosParlamentar'), compact('listaParlamentares'));
+            return view('welcome')->with(compact('cTipoParlamentar'))->with(compact('dadosParlamentar'))->with(compact('listaParlamentares'));
         } else {
-            return view('welcome')->with(compact('cTipoParlamentar'), compact('listaParlamentares'));
+            return view('welcome')->with(compact('cTipoParlamentar'))->with(compact('listaParlamentares'));
         }
     }
 }
