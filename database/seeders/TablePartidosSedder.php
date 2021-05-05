@@ -19,7 +19,8 @@ class TablePartidosSedder extends Seeder
             ['iIdPartido' => 2, 'cNomePartido' => 'Partido Liberal', 'cSiglaPartido' => 'PL', 'cUfPartido' => 'BA'],
             ['iIdPartido' => 3, 'cNomePartido' => 'Partido Social Liberal', 'cSiglaPartido' => 'PSL', 'cUfPartido' => 'SP'],
             ['iIdPartido' => 4, 'cNomePartido' => 'Partido Republicano da Ordem Social', 'cSiglaPartido' => 'PROS', 'cUfPartido' => 'AP'],
-            ['iIdPartido' => 5, 'cNomePartido' => 'Partido Novo', 'cSiglaPartido' => 'NOVO', 'cUfPartido' => 'SP']
+            ['iIdPartido' => 5, 'cNomePartido' => 'Partido Novo', 'cSiglaPartido' => 'NOVO', 'cUfPartido' => 'SP'],
+            ['iIdPartido' => 6, 'cNomePartido' => 'Partido Democrático Trabalhista', 'cSiglaPartido' => 'PDT', 'cUfPartido' => 'RO']
         ]);
     }
 }
