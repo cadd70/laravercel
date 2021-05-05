@@ -9,6 +9,9 @@
         <!-- Styles -->
         <link rel="stylesheet" href="{{ asset('plugins/bootstrap/css/bootstrap.min.css') }}">
         <link rel="stylesheet" href="{{ asset('plugins/fontawesome/css/all.min.css') }}">
+        <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" crossorigin="anonymous"/>
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.datatables.net/fixedheader/3.1.8/css/fixedHeader.dataTables.min.css" crossorigin="anonymous">
         <style>
             .content { 
                 margin-top: 70px; 
@@ -19,6 +22,11 @@
                     margin-top: 110px; 
                 }
             }
+
+            .select2-selection{
+                width: 100%;
+            }
+
         </style>
 
     </head>
@@ -33,7 +41,7 @@
                     <a class="btn btn-light" href="#">Logout</a>
                 </div>
                 <div class="col-md-6 col-sm-12">
-                    <select id="iIdFichaCadastralParlamentar" class="form-control">
+                    <select id="iIdFichaCadastralParlamentar" class="form-control" width="100%">
                         <option value="" selected>Selecione um Parlamentar</option>
                         @foreach($listaParlamentares as $parlamentar)
                             <option value="{{ $parlamentar->iIdFichaCadastralParlamentar }}">{{ $parlamentar->cNomeParlamentar }}</option>
@@ -51,95 +59,103 @@
             <div class="container">  
                 <div class="content">
                     <div class="row text-center">
-                        <div class="card mb-3 col-12">
+                        <div class="card mb-3 p-0 col-12">
                             <div class="card-header bg-dark text-white">
-                                <h1>Deputado Federal <br class="d-md-none"><b>Carlos Alberto</b> <br class="d-lg-none"><small>Partido: <b>WXYZ</b></small></h1>
+                                <h2>{{ $dadosParlamentar->cTipoFuncaoParlamento }} <br class="d-md-none"><b>{{ $dadosParlamentar->cNomeParlamentar }}</b> <br class="d-lg-none"><small>Partido: <b>{{ $dadosParlamentar->partidos->cSiglaPartido }}-{{ $dadosParlamentar->partidos->cUfPartido }}</b></small></h2>
                             </div>
                             <div class="row no-gutters">
-                                <div class="col-md-3">
-                                    <img height="250" width="180" src="{{ asset('images/no-user-picture.jpg') }}" alt="no-user-picture">
+                                <div class="col-sm-3 col-md-3 col-lg-2">
+                                    <img height="200" width="auto" src="{{ $dadosParlamentar->cLinkFotoParlamentar }}" alt="no-user-picture">
                                 </div>
-                                <div class="col-md-9">
-                                    <div class="card-body">
+                                <div class="col-sm-9 col-md-9 col-lg-10">
+                                    <div class="card-body text-left">
                                         <div class="row">
-                                            <div class="col">
-                                                <label>E-mail:</label>
-                                                <p class="form-control"></p>
+                                            <div class="col-12 col-sm mb-2">
+                                                <label class="font-weight-bold">E-mail:</label>
+                                                <p class="card-text">{{ $dadosParlamentar->cEmailParlamentar }}</p>
                                             </div>
+                                            <div class="col-6 col-sm mb-2">
+                                                <label class="font-weight-bold">Telefone:</label>
+                                                <p class="card-text">{{ $dadosParlamentar->cTelefoneParlamentar }}</p>
+                                            </div>
+                                            <div class="col-6 col-sm mb-2">
+                                                <label class="font-weight-bold">Gabinete:</label>
+                                                <p class="card-text">{{ $dadosParlamentar->iNumeroGabinete }}</p>
+                                            </div>
+                                            <div class="col-12 col-sm mb-2">
+                                                <label class="font-weight-bold">Profissão TSE:</label>
+                                                <p class="card-text">{{ $dadosParlamentar->cProfissaoParlamentar }}</p>
+                                            </div>
+                                        </div>
+                                        <br>
+                                        <div class="row d-sm-none d-lg-flex">
+                                            <div class="col-12 col-sm">
+                                                <label class="font-weight-bold">Qtd. de Votos:</label>
+                                                <h3>{{ number_format($dadosParlamentar->quantidadeVotos->sum('iQuantidadeVotos'), 0, ',', '.') }}</h3>
+                                            </div>
+                                            <div class="col-12 col-sm">
+                                                <label class="font-weight-bold">Receita de Campanha:</label>
+                                                <h3>R$ {{ number_format($dadosParlamentar->doacao->sum('nValorDoacao'), 0, ',', '.') }}</h3>
+                                            </div>
+                                            <div class="col-12 col-sm">
+                                                <label class="font-weight-bold">Despesa de Campanha:</label>
+                                                <h3>R$ {{ number_format($dadosParlamentar->doacao->sum('nValorDoacao'), 0, ',', '.') }}</h3>
+                                            </div>
+
                                         </div>
                                     </div>
                                 </div>
+                                <div class="col-sm-12 d-none d-sm-flex d-lg-none row">
+                                    <div class="col-sm">
+                                        <label class="font-weight-bold">Qtd. de Votos:</label> <br>
+                                        <h3>{{ number_format($dadosParlamentar->quantidadeVotos->sum('iQuantidadeVotos'), 0, ',', '.') }}</h3>
+                                    </div>
+                                    <div class="col-sm">
+                                        <label class="font-weight-bold">Receita de Campanha:</label> <br>
+                                        <h3>R$ {{ number_format($dadosParlamentar->doacao->sum('nValorDoacao'), 0, ',', '.') }}</h3>
+                                    </div>
+                                    <div class="col-sm">
+                                        <label class="font-weight-bold">Despesa de Campanha:</label> <br>
+                                        <h3>R$ {{ number_format($dadosParlamentar->doacao->sum('nValorDoacao'), 0, ',', '.') }}</h3>
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
                     </div>
+
                     <div class="row text-center">
-                        <div class="card mb-3 col-12">
-                            <div class="card-header bg-dark text-white">
-                                <h1>Deputado Federal <br class="d-md-none"><b>Carlos Alberto</b> <br class="d-lg-none"><small>Partido: <b>WXYZ</b></small></h1>
+                        <div class="card p-0 col-12 col-md-6">
+                            <div class="card-header p-0 bg-dark text-white">
+                                <h5>Quantidade de Votos por Município</h5>
                             </div>
-                            <div class="row no-gutters">
-                                <div class="col-md-3">
-                                    <img height="250" width="180" src="{{ asset('images/no-user-picture.jpg') }}" alt="no-user-picture">
-                                </div>
-                                <div class="col-md-9">
-                                    <div class="card-body">
-                                        <div class="row">
-                                            <div class="col">
-                                                <label>E-mail:</label>
-                                                <p class="form-control"></p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row text-center">
-                        <div class="card mb-3 col-12">
-                            <div class="card-header bg-dark text-white">
-                                <h1>Deputado Federal <br class="d-md-none"><b>Carlos Alberto</b> <br class="d-lg-none"><small>Partido: <b>WXYZ</b></small></h1>
-                            </div>
-                            <div class="row no-gutters">
-                                <div class="col-md-3">
-                                    <img height="250" width="180" src="{{ asset('images/no-user-picture.jpg') }}" alt="no-user-picture">
-                                </div>
-                                <div class="col-md-9">
-                                    <div class="card-body">
-                                        <div class="row">
-                                            <div class="col">
-                                                <label>E-mail:</label>
-                                                <p class="form-control"></p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row text-center">
-                        <div class="card mb-3 col-12">
-                            <div class="card-header bg-dark text-white">
-                                <h1>Deputado Federal <br class="d-md-none"><b>Carlos Alberto</b> <br class="d-lg-none"><small>Partido: <b>WXYZ</b></small></h1>
-                            </div>
-                            <div class="row no-gutters">
-                                <div class="col-md-3">
-                                    <img height="250" width="180" src="{{ asset('images/no-user-picture.jpg') }}" alt="no-user-picture">
-                                </div>
-                                <div class="col-md-9">
-                                    <div class="card-body">
-                                        <div class="row">
-                                            <div class="col">
-                                                <label>E-mail:</label>
-                                                <p class="form-control"></p>
-                                            </div>
-                                        </div>
-                                    </div>
+                            <div class="card-body p-0 text-left">
+                                <div class="table-responsive">
+                                    <table class="table table-striped table-hover" width="100%">
+                                        <thead>
+                                            <tr>
+                                                <th>Município</th>
+                                                <th>Qtd. de Votos</th>
+                                                <th>% sobre Total</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach($dadosParlamentar->quantidadeVotos as $votos)
+                                                <tr>
+                                                    <td>{{ $votos->cNomeMunicipio }}</td>
+                                                    <td>{{ number_format($votos->iQuantidadeVotos, 0, ',', '.') }}</td>
+                                                    <td>{{ $votos->dPorcentagemVotos }}</td>
+                                                </tr>
+                                            @endforeach
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+        
         @else
             <div class="container">  
                 <div class="content">
@@ -152,6 +168,7 @@
                     </div>
                 </div>
             </div>
+            <br>
         @endif
 
         <!-- Footer -->
@@ -169,7 +186,7 @@
                             <a class="text-dark mx-2" href=""><i class="fab fa-instagram-square fa-2x"></i></a>
                             <a class="text-dark mx-2" href=""><i class="fab fa-whatsapp-square fa-2x"></i></a>
                         </p>
-                        <p><b>Telefone:</b> +55 (99) 9999-9999 &nbsp;   <b>E-mail:</b> email@consultoria.com.br  &nbsp; <br class="d-lg-none"> <b>Endereço:</b> Rua Um, Número 20, Bairro, Cidade-UF</p> 
+                        <p><b>Telefone:</b> +55 (99) 9999-9999 &nbsp;  <br class="d-sm-none"> <b>E-mail:</b> email@consultoria.com.br  &nbsp; <br class="d-lg-none"> <b>Endereço:</b> Rua Um, Número 20, Bairro, Cidade-UF</p> 
                     </div>
                     <!--Grid column-->
                 </div>
@@ -183,9 +200,61 @@
     <script src="{{ asset('plugins/jquery/jquery.min.js') }}"></script>
     <script src="{{ asset('plugins/bootstrap/js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('plugins/fontawesome/js/all.min.js') }}"></script>
+    <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.datatables.net/fixedheader/3.1.8/js/dataTables.fixedHeader.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.2.1/dist/chart.min.js" integrity="sha256-uVEHWRIr846/vAdLJeybWxjPNStREzOlqLMXjW/Saeo=" crossorigin="anonymous"></script>
     <script>
         $('#iIdFichaCadastralParlamentar').change(function(){
             window.location.href = `/${this.value}`;
         });
+
+        $(document).ready( function () {
+            $('#iIdFichaCadastralParlamentar').select2({
+                language: 'pt-BR',
+                width: '100%'
+            });
+
+            $('table').DataTable({
+                responsive:       true,
+                paging:           false,
+                searching:        false,
+                info:             false,
+                order:            false,
+                scrollY:          250,
+                fixedHeader:      true,
+                language: {
+                    sEmptyTable: "Nenhum registro encontrado",
+                    sInfo: "Mostrando de _START_ até _END_ de _TOTAL_ registros",
+                    sInfoEmpty: "Mostrando 0 até 0 de 0 registros",
+                    sInfoFiltered: "(Filtrados de _MAX_ registros)",
+                    sInfoPostFix: "",
+                    sInfoThousands: ".",
+                    sLengthMenu: "Mostrar _MENU_ resultados por página",
+                    sLoadingRecords: "Carregando...",
+                    sProcessing: "Processando...",
+                    sZeroRecords: "Nenhum registro encontrado",
+                    sSearch: "Pesquisar",
+                    oPaginate: {
+                        sNext: "Próximo",
+                        sPrevious: "Anterior",
+                        sFirst: "Primeiro",
+                        sLast: "Último"
+                    },
+                    oAria: {
+                        sSortAscending: "Ordenar colunas de forma ascendente",
+                        sSortDescending: " Ordenar colunas de forma descendente"
+                    }
+                },
+            });
+        } );
+
+        // Fix positioning with static parents
+        if (this.$dropdownParent[0].style.position !== 'static') {
+            var parentOffset = this.$dropdownParent.offset();
+
+            css.top -= parentOffset.top;
+            css.left -= parentOffset.left;
+        }
     </script>
 </html>
