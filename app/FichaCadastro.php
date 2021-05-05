@@ -24,7 +24,7 @@ class FichaCadastro extends Model
 
     public function quantidadeVotos()
     {
-        return $this->hasMany('App\QuantidadeVotos', 'iIdFichaCadastralParlamentar', 'iIdFichaCadastralParlamentar');
+        return $this->hasMany('App\QuantidadeVotos', 'iIdFichaCadastralParlamentar', 'iIdFichaCadastralParlamentar')->orderby('iQuantidadeVotos', 'desc');
     }
 
     public function doacao()
