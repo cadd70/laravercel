@@ -125,7 +125,7 @@
                     </div>
 
                     <div class="row text-center">
-                        <div class="card p-0 col-12 col-md-6">
+                        <div class="card p-0 col-12 col-lg-6">
                             <div class="card-header p-0 bg-dark text-white">
                                 <h5>Quantidade de Votos por Município</h5>
                             </div>
@@ -150,6 +150,15 @@
                                         </tbody>
                                     </table>
                                 </div>
+                            </div>
+                        </div>
+
+                        <div class="card p-0 col-12 col-lg-6">
+                            <div class="card-header p-0 bg-dark text-white">
+                                <h5>Doações de Campanha</h5>
+                            </div>
+                            <div class="card-body p-0 text-center chart-container" style="height: 250px; overflow-y: scroll;">
+                                <canvas class="" id="canvasDoacoes"></canvas>
                             </div>
                         </div>
                     </div>
@@ -213,6 +222,38 @@
             $('#iIdFichaCadastralParlamentar').select2({
                 language: 'pt-BR',
                 width: '100%'
+            });
+
+            let arrayNomes = [];
+            let arrayValores = [];
+            $.each(@json($dadosParlamentar->doacao), function(key, item) {
+                arrayNomes.push(item.cNomeDoador);
+                arrayValores.push(item.nValorDoacao);
+            });
+
+            let canvas = document.getElementById('canvasDoacoes').getContext('2d');
+            let chartDoacoes = new Chart(canvas, {
+                type: 'bar',
+                data: {
+                    labels: arrayNomes,
+                    datasets: [
+                        {
+                            label: ['Valor'],
+                            data: arrayValores,
+                        }
+                    ]
+                },
+                options: {
+                    indexAxis: 'y',
+                    scales: {
+                        x: {
+                            ticks: {
+                                display: false
+                            },
+                        }
+                    },
+                    responsive: true
+                }
             });
 
             $('table').DataTable({
