@@ -74,6 +74,15 @@ class TableDoacaoPorParlamentarSeeder extends Seeder
             ['iIdFichaCadastralParlamentar' => 1, 'cNomeDoador' => 'RECEITA PARA CAMPANHA', 'nValorDoacao' => '37750'],
             ['iIdFichaCadastralParlamentar' => 1, 'cNomeDoador' => 'PARTIDO HUMANISTA DA SOLIDARIEDADE', 'nValorDoacao' => '34500'],
             ['iIdFichaCadastralParlamentar' => 1, 'cNomeDoador' => 'FINEIAS DO NASCIMENTO PARIS', 'nValorDoacao' => '3250'],
+            ['iIdFichaCadastralParlamentar' => 6, 'cNomeDoador' => 'DESPESAS COM CAMPANHA', 'nValorDoacao' => '3000000'],
+            ['iIdFichaCadastralParlamentar' => 6, 'cNomeDoador' => 'RECEITA PARA CAMPANHA', 'nValorDoacao' => '2980000'],
+            ['iIdFichaCadastralParlamentar' => 6, 'cNomeDoador' => 'PARTIDO DEMOCRATICO TRABALHISTA', 'nValorDoacao' => '700000'],
+            ['iIdFichaCadastralParlamentar' => 6, 'cNomeDoador' => 'ACIR MARCOS GURGACZ', 'nValorDoacao' => '1000000'],
+            ['iIdFichaCadastralParlamentar' => 6, 'cNomeDoador' => 'ANA MARIA CARDOSO GURGACZ', 'nValorDoacao' => '200000'],
+            ['iIdFichaCadastralParlamentar' => 6, 'cNomeDoador' => 'ASSIS GURGACZ', 'nValorDoacao' => '300000'],
+            ['iIdFichaCadastralParlamentar' => 6, 'cNomeDoador' => 'ANDRE LUIZ DELGADO', 'nValorDoacao' => '21666.67'],
+            ['iIdFichaCadastralParlamentar' => 6, 'cNomeDoador' => 'FERNANDO BORGES DE MORAES', 'nValorDoacao' => '21666.67'],
+            ['iIdFichaCadastralParlamentar' => 6, 'cNomeDoador' => 'GILSON SOTTE', 'nValorDoacao' => '15000'],
         ]);
     }
 }

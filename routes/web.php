@@ -13,6 +13,9 @@ use App\Http\Controllers\ConsultoriaController;
 |
 */
 
-Route::get('/{iIdFichaCadastralParlamentar?}', [ConsultoriaController::class, 'index']);
+Route::get('/', [ConsultoriaController::class, 'index']);
+Route::get('/deputados/{iIdFichaCadastralParlamentar?}', [ConsultoriaController::class, 'viewCadastroParlamentar']);
+Route::get('/senadores/{iIdFichaCadastralParlamentar?}', [ConsultoriaController::class, 'viewCadastroParlamentar']);
+
 
 

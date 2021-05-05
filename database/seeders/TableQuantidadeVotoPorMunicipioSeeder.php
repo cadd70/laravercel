@@ -110,7 +110,8 @@ class TableQuantidadeVotoPorMunicipioSeeder extends Seeder
             ['iIdFichaCadastralParlamentar' => 5, 'cNomeMunicipio' => 'MOGI DAS CRUZES', 'iQuantidadeVotos' => 396, 'dPorcentagemVotos' => '0,62%'], 
             ['iIdFichaCadastralParlamentar' => 5, 'cNomeMunicipio' => 'TABOÃO DA SERRA', 'iQuantidadeVotos' => 396, 'dPorcentagemVotos' => '0,62%'], 
             ['iIdFichaCadastralParlamentar' => 5, 'cNomeMunicipio' => 'PIRACICABA', 'iQuantidadeVotos' => 381, 'dPorcentagemVotos' => '0,59%'], 
-            ['iIdFichaCadastralParlamentar' => 5, 'cNomeMunicipio' => 'SÃO JOSÉ DO RIO PRETO', 'iQuantidadeVotos' => 378, 'dPorcentagemVotos' => '0,59%'],        
+            ['iIdFichaCadastralParlamentar' => 5, 'cNomeMunicipio' => 'SÃO JOSÉ DO RIO PRETO', 'iQuantidadeVotos' => 378, 'dPorcentagemVotos' => '0,59%'],  
+            ['iIdFichaCadastralParlamentar' => 6, 'cNomeMunicipio' => 'PORTO VELHOR', 'iQuantidadeVotos' => 312614, 'dPorcentagemVotos' => '100%']        
         ]);
     }
 }
