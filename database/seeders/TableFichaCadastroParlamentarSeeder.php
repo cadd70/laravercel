@@ -37,8 +37,13 @@ class TableFichaCadastroParlamentarSeeder extends Seeder
             ],
             [
                 'iIdFichaCadastralParlamentar' => 5, 'cNomeParlamentar' => 'ADRIANA VENTURA', 'cEmailParlamentar' => 'dep.adrianaventura@camara.leg.br'
-                , 'cTelefoneParlamentar' => '3215-5802', 'iIdPartido' => 5, 'iNumeroGabinete' => 802, 'cTipoFuncaoParlamento' => 'Deputado Federal'
+                , 'cTelefoneParlamentar' => '3215-5802', 'iIdPartido' => 5, 'iNumeroGabinete' => 56, 'cTipoFuncaoParlamento' => 'Deputado Federal'
                 , 'cProfissaoParlamentar' => 'ADMINISTRADOR', 'cLinkFotoParlamentar' => 'https://www.camara.leg.br/internet/deputado/bandep/204528.jpg'
+            ],
+            [
+                'iIdFichaCadastralParlamentar' => 6, 'cNomeParlamentar' => 'ACIR GURGACZ', 'cEmailParlamentar' => 'sen.acirgurgacz@senado.leg.br'
+                , 'cTelefoneParlamentar' => '3303-3131', 'iIdPartido' => 6, 'iNumeroGabinete' => 802, 'cTipoFuncaoParlamento' => 'Senador'
+                , 'cProfissaoParlamentar' => 'OUTROS', 'cLinkFotoParlamentar' => 'https://www.senado.leg.br/senadores/img/fotos-oficiais/senador4981.jpg'
             ],
         ]);
     }
